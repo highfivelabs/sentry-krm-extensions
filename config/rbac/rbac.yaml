@@ -1,0 +1,121 @@
+# Copyright 2026 High Five Labs
+# SPDX-License-Identifier: Apache-2.0
+# The manager reads Connections and their Secrets in every namespace it
+# reconciles; narrow the binding per namespace if that is too broad.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: manager
+  namespace: sentry-krm-extensions-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: sentry-krm-extensions-manager
+rules:
+- apiGroups: &id001
+  - cron.sentry.hfl.dev
+  - dashboard.sentry.hfl.dev
+  - detector.sentry.hfl.dev
+  - key.sentry.hfl.dev
+  - notification.sentry.hfl.dev
+  - organization.sentry.hfl.dev
+  - project.sentry.hfl.dev
+  - team.sentry.hfl.dev
+  resources:
+  - cronmonitors
+  - dashboards
+  - detectors
+  - keys
+  - notificationactions
+  - organizationmembers
+  - organizations
+  - projectownerships
+  - projects
+  - teams
+  verbs:
+  - get
+  - list
+  - watch
+  - update
+  - patch
+- apiGroups: *id001
+  resources:
+  - cronmonitors/status
+  - dashboards/status
+  - detectors/status
+  - keys/status
+  - notificationactions/status
+  - organizationmembers/status
+  - organizations/status
+  - projectownerships/status
+  - projects/status
+  - teams/status
+  verbs:
+  - get
+  - update
+  - patch
+- apiGroups: *id001
+  resources:
+  - cronmonitors/finalizers
+  - dashboards/finalizers
+  - detectors/finalizers
+  - keys/finalizers
+  - notificationactions/finalizers
+  - organizationmembers/finalizers
+  - organizations/finalizers
+  - projectownerships/finalizers
+  - projects/finalizers
+  - teams/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - core.sentry.hfl.dev
+  resources:
+  - connections
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ''
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+- apiGroups:
+  - coordination.k8s.io
+  resources:
+  - leases
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ''
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: sentry-krm-extensions-manager
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: sentry-krm-extensions-manager
+subjects:
+- kind: ServiceAccount
+  name: manager
+  namespace: sentry-krm-extensions-system
