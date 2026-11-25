@@ -1,0 +1,20 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "DELETE",
+      "path": "/projects/{{cred:org}}/{{run}}/",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/teams/{{cred:org}}/{{run}}/",
+      "status": 204
+    }
+  ]
+}

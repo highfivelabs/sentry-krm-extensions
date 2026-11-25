@@ -1,0 +1,89 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/rules/",
+      "body": "{\"actionMatch\":\"all\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"name\":\"example-issue-alert\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"actionMatch\":\"all\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"id\":270000008,\"name\":\"example-issue-alert\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/rules/270000008/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actionMatch\":\"all\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"id\":270000008,\"name\":\"example-issue-alert\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/rules/270000008/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actionMatch\":\"all\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"id\":270000008,\"name\":\"example-issue-alert\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/rules/270000008/",
+      "body": "{\"actionMatch\":\"changed-actionMatch\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"name\":\"example-issue-alert\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actionMatch\":\"changed-actionMatch\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"id\":270000008,\"name\":\"example-issue-alert\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/rules/270000008/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actionMatch\":\"changed-actionMatch\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"id\":270000008,\"name\":\"example-issue-alert\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/rules/270000008/",
+      "body": "{\"actionMatch\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actionMatch\":\"hfl-live-drift\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"id\":270000008,\"name\":\"example-issue-alert\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/rules/270000008/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actionMatch\":\"hfl-live-drift\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"id\":270000008,\"name\":\"example-issue-alert\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/rules/270000008/",
+      "body": "{\"actionMatch\":\"changed-actionMatch\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"name\":\"example-issue-alert\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actionMatch\":\"changed-actionMatch\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"id\":270000008,\"name\":\"example-issue-alert\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/rules/270000008/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"actionMatch\":\"changed-actionMatch\",\"actions\":[{\"id\":\"sentry.rules.actions.notify_event.NotifyEventAction\"}],\"conditions\":[{\"id\":\"sentry.rules.conditions.first_seen_event.FirstSeenEventCondition\"}],\"frequency\":30,\"id\":270000008,\"name\":\"example-issue-alert\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/rules/270000008/",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/rules/270000008/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

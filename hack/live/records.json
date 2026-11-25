@@ -1,0 +1,134 @@
+{
+  "CronMonitor.cron.sentry.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-cfb2",
+    "date": "2026-11-20T23:56:49Z",
+    "target": "sentry.io",
+    "lastPass": "2026-11-20T23:56:49Z"
+  },
+  "Dashboard.dashboard.sentry.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-cfb2",
+    "date": "2026-11-20T23:56:51Z",
+    "target": "sentry.io",
+    "lastPass": "2026-11-20T23:56:51Z"
+  },
+  "Detector.detector.sentry.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-cfb2",
+    "date": "2026-11-20T23:57:02Z",
+    "target": "sentry.io",
+    "lastPass": "2026-11-20T23:57:02Z"
+  },
+  "Key.key.sentry.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-cfb2",
+    "date": "2026-11-20T23:56:45Z",
+    "target": "sentry.io",
+    "lastPass": "2026-11-20T23:56:45Z"
+  },
+  "Organization.organization.sentry.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202356-cfb2",
+    "date": "2026-11-20T23:56:58Z",
+    "target": "sentry.io",
+    "lastPass": "2026-11-20T23:56:58Z"
+  },
+  "Project.project.sentry.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-cfb2",
+    "date": "2026-11-20T23:56:42Z",
+    "target": "sentry.io",
+    "lastPass": "2026-11-20T23:56:42Z"
+  },
+  "ProjectInboundDataFilter.project.sentry.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202356-cfb2",
+    "date": "2026-11-20T23:57:05Z",
+    "target": "sentry.io",
+    "lastPass": "2026-11-20T23:57:05Z"
+  },
+  "ProjectOwnership.project.sentry.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete"
+    ],
+    "run": "hfl-live-2611202356-cfb2",
+    "date": "2026-11-20T23:56:54Z",
+    "target": "sentry.io",
+    "lastPass": "2026-11-20T23:56:54Z"
+  },
+  "Team.team.sentry.hfl.dev": {
+    "result": "pass",
+    "steps": [
+      "create",
+      "read",
+      "update",
+      "drift",
+      "delete",
+      "gone"
+    ],
+    "run": "hfl-live-2611202356-cfb2",
+    "date": "2026-11-20T23:56:37Z",
+    "target": "sentry.io",
+    "lastPass": "2026-11-20T23:56:37Z"
+  }
+}

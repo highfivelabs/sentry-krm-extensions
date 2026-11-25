@@ -1,0 +1,47 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/integrations/12345/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/integrations/12345/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/example-organization-id-or-slug/integrations/12345/",
+      "body": "{\"team_table\":[{\"integration_key\":\"{{redacted}}\",\"team\":\"example-team\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team_table\":[{\"integration_key\":\"{{redacted}}\",\"team\":\"example-team\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/integrations/12345/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team_table\":[{\"integration_key\":\"{{redacted}}\",\"team\":\"example-team\"}]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/example-organization-id-or-slug/integrations/12345/",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team_table\":[{\"integration_key\":\"{{redacted}}\",\"team\":\"example-team\"}]}"
+    }
+  ]
+}

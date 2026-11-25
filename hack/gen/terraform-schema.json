@@ -1,0 +1,7 @@
+{
+ "provider": "jianyuan/sentry",
+ "resources": {},
+ "source": "terraform providers schema -json (terraform 1.17.2); descriptions it lacks from https://registry.terraform.io/providers/jianyuan/sentry/0.15.8/docs",
+ "terraform": "1.17.2",
+ "version": "0.15.8"
+}

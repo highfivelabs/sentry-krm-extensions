@@ -1,0 +1,16 @@
+{
+  "recorded": "2026-11-20T23:57:05Z",
+  "target": "sentry.io",
+  "interactions": [
+    {
+      "method": "DELETE",
+      "path": "/projects/{{cred:org}}/{{run}}/",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/teams/{{cred:org}}/{{run}}/",
+      "status": 204
+    }
+  ]
+}

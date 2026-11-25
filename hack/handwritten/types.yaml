@@ -1,0 +1,586 @@
+# Hand-written descriptors for Sentry resources absent from openapi-derefed.json.
+# Merged into types.yaml, config/crds, and zz_generated.report.md by hack/handwritten/merge.py.
+kinds:
+- kind: IssueAlert
+  group: alert.sentry.hfl.dev
+  version: v1alpha1
+  plural: issuealerts
+  shape: crud
+  create:
+    method: POST
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/rules/
+  read:
+    method: GET
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/rules/{rule_id}/
+  update:
+    method: PUT
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/rules/{rule_id}/
+  delete:
+    method: DELETE
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/rules/{rule_id}/
+  params:
+  - name: organization_id_or_slug
+    field: organizationIdOrSlug
+  - name: project_id_or_slug
+    field: projectIdOrSlug
+  id:
+    param: rule_id
+    from: id
+  terraform:
+  - sentry_issue_alert
+  sample:
+    organizationIdOrSlug: example-organization-id-or-slug
+    projectIdOrSlug: example-project-id-or-slug
+    name: example-issue-alert
+    actionMatch: all
+    conditions:
+    - id: sentry.rules.conditions.first_seen_event.FirstSeenEventCondition
+    actions:
+    - id: sentry.rules.actions.notify_event.NotifyEventAction
+    frequency: 30
+  required:
+  - organizationIdOrSlug
+  - projectIdOrSlug
+  - name
+  - actionMatch
+  - conditions
+  - actions
+  - frequency
+  properties:
+    organizationIdOrSlug:
+      type: string
+    projectIdOrSlug:
+      type: string
+    name:
+      type: string
+    actionMatch:
+      type: string
+    filterMatch:
+      type: string
+    conditions:
+      type: array
+      items:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    filters:
+      type: array
+      items:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    actions:
+      type: array
+      items:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    frequency:
+      type: integer
+    environment:
+      type: string
+    owner:
+      type: string
+
+- kind: MetricAlert
+  group: alert.sentry.hfl.dev
+  version: v1alpha1
+  plural: metricalerts
+  shape: crud
+  create:
+    method: POST
+    path: /organizations/{organization_id_or_slug}/alert-rules/
+  read:
+    method: GET
+    path: /organizations/{organization_id_or_slug}/alert-rules/{alert_rule_id}/
+  update:
+    method: PUT
+    path: /organizations/{organization_id_or_slug}/alert-rules/{alert_rule_id}/
+  delete:
+    method: DELETE
+    path: /organizations/{organization_id_or_slug}/alert-rules/{alert_rule_id}/
+  params:
+  - name: organization_id_or_slug
+    field: organizationIdOrSlug
+  id:
+    param: alert_rule_id
+    from: id
+  terraform:
+  - sentry_metric_alert
+  - sentry_alert
+  sample:
+    organizationIdOrSlug: example-organization-id-or-slug
+    name: example-metric-alert
+    projects:
+    - example-project
+    query: ""
+    aggregate: count()
+    timeWindow: 60
+    thresholdType: 0
+    triggers:
+    - label: critical
+      alertThreshold: 100
+      actions: []
+  required:
+  - organizationIdOrSlug
+  - name
+  - projects
+  - query
+  - aggregate
+  - timeWindow
+  - thresholdType
+  - triggers
+  properties:
+    organizationIdOrSlug:
+      type: string
+    name:
+      type: string
+    projects:
+      type: array
+      items:
+        type: string
+    dataset:
+      type: string
+    eventTypes:
+      type: array
+      items:
+        type: string
+    query:
+      type: string
+    aggregate:
+      type: string
+    timeWindow:
+      type: number
+    thresholdType:
+      type: integer
+    resolveThreshold:
+      type: number
+    triggers:
+      type: array
+      items:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+    environment:
+      type: string
+    owner:
+      type: string
+
+- kind: Plugin
+  group: plugin.sentry.hfl.dev
+  version: v1alpha1
+  plural: plugins
+  shape: upsert
+  read:
+    method: GET
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/plugins/{plugin_id}/
+  update:
+    method: PUT
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/plugins/{plugin_id}/
+  delete:
+    method: DELETE
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/plugins/{plugin_id}/
+  params:
+  - name: organization_id_or_slug
+    field: organizationIdOrSlug
+  - name: project_id_or_slug
+    field: projectIdOrSlug
+  - name: plugin_id
+    field: pluginId
+  terraform:
+  - sentry_plugin
+  sample:
+    organizationIdOrSlug: example-organization-id-or-slug
+    projectIdOrSlug: example-project-id-or-slug
+    pluginId: webhooks
+    urls: https://example.com/webhook
+  required:
+  - organizationIdOrSlug
+  - projectIdOrSlug
+  - pluginId
+  properties:
+    organizationIdOrSlug:
+      type: string
+    projectIdOrSlug:
+      type: string
+    pluginId:
+      type: string
+    urls:
+      type: string
+
+- kind: OrganizationRepository
+  group: organization.sentry.hfl.dev
+  version: v1alpha1
+  plural: organizationrepositories
+  shape: crud
+  create:
+    method: POST
+    path: /organizations/{organization_id_or_slug}/repos/
+  read:
+    method: GET
+    path: /organizations/{organization_id_or_slug}/repos/{repository_id}/
+  delete:
+    method: DELETE
+    path: /organizations/{organization_id_or_slug}/repos/{repository_id}/
+  params:
+  - name: organization_id_or_slug
+    field: organizationIdOrSlug
+  id:
+    param: repository_id
+    from: id
+  terraform:
+  - sentry_organization_repository
+  sample:
+    organizationIdOrSlug: example-organization-id-or-slug
+    provider: integrations:github
+    identifier: example-org/example-repo
+    installation: "12345"
+  required:
+  - organizationIdOrSlug
+  - provider
+  - identifier
+  properties:
+    organizationIdOrSlug:
+      type: string
+    provider:
+      type: string
+    identifier:
+      type: string
+    installation:
+      type: string
+      description: Integration installation ID.
+
+- kind: OrganizationCodeMapping
+  group: organization.sentry.hfl.dev
+  version: v1alpha1
+  plural: organizationcodemappings
+  shape: crud
+  create:
+    method: POST
+    path: /organizations/{organization_id_or_slug}/code-mappings/
+  read:
+    method: GET
+    path: /organizations/{organization_id_or_slug}/code-mappings/{code_mapping_id}/
+  update:
+    method: PUT
+    path: /organizations/{organization_id_or_slug}/code-mappings/{code_mapping_id}/
+  delete:
+    method: DELETE
+    path: /organizations/{organization_id_or_slug}/code-mappings/{code_mapping_id}/
+  params:
+  - name: organization_id_or_slug
+    field: organizationIdOrSlug
+  id:
+    param: code_mapping_id
+    from: id
+  terraform:
+  - sentry_organization_code_mapping
+  sample:
+    organizationIdOrSlug: example-organization-id-or-slug
+    integrationId: "12345"
+    repositoryId: "67890"
+    projectId: "11111"
+    defaultBranch: main
+  required:
+  - organizationIdOrSlug
+  - integrationId
+  - repositoryId
+  - projectId
+  - defaultBranch
+  properties:
+    organizationIdOrSlug:
+      type: string
+    integrationId:
+      type: string
+      description: Sentry integration ID.
+    repositoryId:
+      type: string
+      description: Sentry organization repository ID.
+    projectId:
+      type: string
+      description: Sentry project ID.
+    defaultBranch:
+      type: string
+      description: Default branch of the repository.
+    stackRoot:
+      type: string
+    sourceRoot:
+      type: string
+    automaticallyGenerated:
+      type: boolean
+
+- kind: ProjectSymbolSource
+  group: project.sentry.hfl.dev
+  version: v1alpha1
+  plural: projectsymbolsources
+  shape: crud
+  create:
+    method: POST
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/symbol-sources/
+  read:
+    method: GET
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/symbol-sources/{symbol_source_id}/
+  update:
+    method: PUT
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/symbol-sources/{symbol_source_id}/
+  delete:
+    method: DELETE
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/symbol-sources/{symbol_source_id}/
+  params:
+  - name: organization_id_or_slug
+    field: organizationIdOrSlug
+  - name: project_id_or_slug
+    field: projectIdOrSlug
+  id:
+    param: symbol_source_id
+    from: id
+  writeOnly:
+  - password
+  - secretKey
+  - privateKey
+  terraform:
+  - sentry_project_symbol_source
+  sample:
+    organizationIdOrSlug: example-organization-id-or-slug
+    projectIdOrSlug: example-project-id-or-slug
+    type: http
+    name: example-symbol-source
+    url: https://example.com/symbols/
+    layout:
+      type: native
+      casing: default
+  required:
+  - organizationIdOrSlug
+  - projectIdOrSlug
+  - type
+  - name
+  properties:
+    organizationIdOrSlug:
+      type: string
+    projectIdOrSlug:
+      type: string
+    type:
+      type: string
+    name:
+      type: string
+    url:
+      type: string
+    username:
+      type: string
+      description: HTTP basic auth username.
+    password:
+      type: string
+      description: HTTP basic auth password.
+    bucket:
+      type: string
+    region:
+      type: string
+      description: AWS region (for s3).
+    accessKey:
+      type: string
+    secretKey:
+      type: string
+    prefix:
+      type: string
+    privateKey:
+      type: string
+    layout:
+      type: object
+      description: Directory layout configuration.
+      x-kubernetes-preserve-unknown-fields: true
+
+- kind: TeamMember
+  group: team.sentry.hfl.dev
+  version: v1alpha1
+  plural: teammembers
+  shape: upsert
+  read:
+    method: GET
+    path: /organizations/{organization_id_or_slug}/members/{member_id}/teams/{team_id_or_slug}/
+  update:
+    method: POST
+    path: /organizations/{organization_id_or_slug}/members/{member_id}/teams/{team_id_or_slug}/
+  delete:
+    method: DELETE
+    path: /organizations/{organization_id_or_slug}/members/{member_id}/teams/{team_id_or_slug}/
+  params:
+  - name: organization_id_or_slug
+    field: organizationIdOrSlug
+  - name: member_id
+    field: memberId
+  - name: team_id_or_slug
+    field: teamIdOrSlug
+  terraform:
+  - sentry_team_member
+  sample:
+    organizationIdOrSlug: example-organization-id-or-slug
+    memberId: "12345"
+    teamIdOrSlug: example-team
+  required:
+  - organizationIdOrSlug
+  - memberId
+  - teamIdOrSlug
+  properties:
+    organizationIdOrSlug:
+      type: string
+    memberId:
+      type: string
+    teamIdOrSlug:
+      type: string
+
+- kind: IntegrationOpsgenie
+  group: integration.sentry.hfl.dev
+  version: v1alpha1
+  plural: integrationopsgenies
+  shape: settings
+  read:
+    method: GET
+    path: /organizations/{organization_id_or_slug}/integrations/{integration_id}/
+  update:
+    method: PUT
+    path: /organizations/{organization_id_or_slug}/integrations/{integration_id}/
+  params:
+  - name: organization_id_or_slug
+    field: organizationIdOrSlug
+  - name: integration_id
+    field: integrationId
+  terraform:
+  - sentry_integration_opsgenie
+  sample:
+    organizationIdOrSlug: example-organization-id-or-slug
+    integrationId: "12345"
+    team_table:
+    - team: example-team
+      integration_key: example-key
+  required:
+  - organizationIdOrSlug
+  - integrationId
+  - team_table
+  properties:
+    organizationIdOrSlug:
+      type: string
+    integrationId:
+      type: string
+    team_table:
+      type: array
+      items:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+
+- kind: IntegrationPagerduty
+  group: integration.sentry.hfl.dev
+  version: v1alpha1
+  plural: integrationpagerduties
+  shape: settings
+  read:
+    method: GET
+    path: /organizations/{organization_id_or_slug}/integrations/{integration_id}/
+  update:
+    method: PUT
+    path: /organizations/{organization_id_or_slug}/integrations/{integration_id}/
+  params:
+  - name: organization_id_or_slug
+    field: organizationIdOrSlug
+  - name: integration_id
+    field: integrationId
+  terraform:
+  - sentry_integration_pagerduty
+  sample:
+    organizationIdOrSlug: example-organization-id-or-slug
+    integrationId: "12345"
+    service_table:
+    - service: example-service
+      integration_key: example-key
+  required:
+  - organizationIdOrSlug
+  - integrationId
+  - service_table
+  properties:
+    organizationIdOrSlug:
+      type: string
+    integrationId:
+      type: string
+    service_table:
+      type: array
+      items:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true
+
+- kind: ProjectInboundDataFilter
+  group: project.sentry.hfl.dev
+  version: v1alpha1
+  plural: projectinbounddatafilters
+  shape: settings
+  read:
+    method: GET
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/filters/
+    find:
+      list: ""
+      param: filter_id
+      field: id
+  update:
+    method: PUT
+    path: /projects/{organization_id_or_slug}/{project_id_or_slug}/filters/{filter_id}/
+  params:
+  - name: organization_id_or_slug
+    field: organizationIdOrSlug
+  - name: project_id_or_slug
+    field: projectIdOrSlug
+  - name: filter_id
+    field: filterId
+  terraform:
+  - sentry_project_inbound_data_filter
+  sample:
+    organizationIdOrSlug: example-organization-id-or-slug
+    projectIdOrSlug: example-project-id-or-slug
+    filterId: browser-extensions
+    active: true
+  required:
+  - organizationIdOrSlug
+  - projectIdOrSlug
+  - filterId
+  properties:
+    organizationIdOrSlug:
+      type: string
+    projectIdOrSlug:
+      type: string
+    filterId:
+      type: string
+    active:
+      type: boolean
+    subfilters:
+      type: array
+      items:
+        type: string
+
+- kind: ProjectSpikeProtection
+  group: project.sentry.hfl.dev
+  version: v1alpha1
+  plural: projectspikeprotections
+  shape: assoc
+  create:
+    method: POST
+    path: /organizations/{organization_id_or_slug}/spike-protections/
+  read:
+    method: GET
+    path: /organizations/{organization_id_or_slug}/projects/
+  delete:
+    method: DELETE
+    path: /organizations/{organization_id_or_slug}/spike-protections/
+    sendBody: true
+  params:
+  - name: organization_id_or_slug
+    field: organizationIdOrSlug
+  terraform:
+  - sentry_project_spike_protection
+  - sentry_all_projects_spike_protection
+  sample:
+    organizationIdOrSlug: example-organization-id-or-slug
+    projects:
+    - example-project
+  required:
+  - organizationIdOrSlug
+  - projects
+  properties:
+    organizationIdOrSlug:
+      type: string
+    projects:
+      type: array
+      items:
+        type: string

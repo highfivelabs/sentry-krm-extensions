@@ -1,0 +1,89 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/organizations/example-organization-id-or-slug/members/",
+      "body": "{\"email\":\"example-email\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"email\":\"example-email\",\"expired\":true,\"externalUsers\":[],\"flags\":{\"idp:provisioned\":true,\"idp:role-restricted\":true,\"member-limit:restricted\":true,\"partnership:restricted\":true,\"sso:invalid\":true,\"sso:linked\":true},\"id\":270000006,\"inviteStatus\":\"approved\",\"inviterName\":\"example-inviterName\",\"isOnlyOwner\":true,\"name\":\"example-name\",\"orgRoleList\":[],\"pending\":true,\"roleName\":\"example-roleName\",\"teamRoleList\":[],\"user\":{\"avatarUrl\":\"example-avatarUrl\",\"dateJoined\":\"example-dateJoined\",\"email\":\"example-email\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"example-name\",\"username\":\"example-username\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/members/270000006/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"email\":\"example-email\",\"expired\":true,\"externalUsers\":[],\"flags\":{\"idp:provisioned\":true,\"idp:role-restricted\":true,\"member-limit:restricted\":true,\"partnership:restricted\":true,\"sso:invalid\":true,\"sso:linked\":true},\"id\":270000006,\"inviteStatus\":\"approved\",\"inviterName\":\"example-inviterName\",\"isOnlyOwner\":true,\"name\":\"example-name\",\"orgRoleList\":[],\"pending\":true,\"roleName\":\"example-roleName\",\"teamRoleList\":[],\"user\":{\"avatarUrl\":\"example-avatarUrl\",\"dateJoined\":\"example-dateJoined\",\"email\":\"example-email\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"example-name\",\"username\":\"example-username\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/members/270000006/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"email\":\"example-email\",\"expired\":true,\"externalUsers\":[],\"flags\":{\"idp:provisioned\":true,\"idp:role-restricted\":true,\"member-limit:restricted\":true,\"partnership:restricted\":true,\"sso:invalid\":true,\"sso:linked\":true},\"id\":270000006,\"inviteStatus\":\"approved\",\"inviterName\":\"example-inviterName\",\"isOnlyOwner\":true,\"name\":\"example-name\",\"orgRoleList\":[],\"pending\":true,\"roleName\":\"example-roleName\",\"teamRoleList\":[],\"user\":{\"avatarUrl\":\"example-avatarUrl\",\"dateJoined\":\"example-dateJoined\",\"email\":\"example-email\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"example-name\",\"username\":\"example-username\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/example-organization-id-or-slug/members/270000006/",
+      "body": "{\"email\":\"changed-email\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"email\":\"changed-email\",\"expired\":true,\"externalUsers\":[],\"flags\":{\"idp:provisioned\":true,\"idp:role-restricted\":true,\"member-limit:restricted\":true,\"partnership:restricted\":true,\"sso:invalid\":true,\"sso:linked\":true},\"id\":270000006,\"inviteStatus\":\"approved\",\"inviterName\":\"example-inviterName\",\"isOnlyOwner\":true,\"name\":\"example-name\",\"orgRoleList\":[],\"pending\":true,\"roleName\":\"example-roleName\",\"teamRoleList\":[],\"user\":{\"avatarUrl\":\"example-avatarUrl\",\"dateJoined\":\"example-dateJoined\",\"email\":\"example-email\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"example-name\",\"username\":\"example-username\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/members/270000006/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"email\":\"changed-email\",\"expired\":true,\"externalUsers\":[],\"flags\":{\"idp:provisioned\":true,\"idp:role-restricted\":true,\"member-limit:restricted\":true,\"partnership:restricted\":true,\"sso:invalid\":true,\"sso:linked\":true},\"id\":270000006,\"inviteStatus\":\"approved\",\"inviterName\":\"example-inviterName\",\"isOnlyOwner\":true,\"name\":\"example-name\",\"orgRoleList\":[],\"pending\":true,\"roleName\":\"example-roleName\",\"teamRoleList\":[],\"user\":{\"avatarUrl\":\"example-avatarUrl\",\"dateJoined\":\"example-dateJoined\",\"email\":\"example-email\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"example-name\",\"username\":\"example-username\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/example-organization-id-or-slug/members/270000006/",
+      "body": "{\"email\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"email\":\"hfl-live-drift\",\"expired\":true,\"externalUsers\":[],\"flags\":{\"idp:provisioned\":true,\"idp:role-restricted\":true,\"member-limit:restricted\":true,\"partnership:restricted\":true,\"sso:invalid\":true,\"sso:linked\":true},\"id\":270000006,\"inviteStatus\":\"approved\",\"inviterName\":\"example-inviterName\",\"isOnlyOwner\":true,\"name\":\"example-name\",\"orgRoleList\":[],\"pending\":true,\"roleName\":\"example-roleName\",\"teamRoleList\":[],\"user\":{\"avatarUrl\":\"example-avatarUrl\",\"dateJoined\":\"example-dateJoined\",\"email\":\"example-email\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"example-name\",\"username\":\"example-username\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/members/270000006/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"email\":\"hfl-live-drift\",\"expired\":true,\"externalUsers\":[],\"flags\":{\"idp:provisioned\":true,\"idp:role-restricted\":true,\"member-limit:restricted\":true,\"partnership:restricted\":true,\"sso:invalid\":true,\"sso:linked\":true},\"id\":270000006,\"inviteStatus\":\"approved\",\"inviterName\":\"example-inviterName\",\"isOnlyOwner\":true,\"name\":\"example-name\",\"orgRoleList\":[],\"pending\":true,\"roleName\":\"example-roleName\",\"teamRoleList\":[],\"user\":{\"avatarUrl\":\"example-avatarUrl\",\"dateJoined\":\"example-dateJoined\",\"email\":\"example-email\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"example-name\",\"username\":\"example-username\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/example-organization-id-or-slug/members/270000006/",
+      "body": "{\"email\":\"changed-email\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"email\":\"changed-email\",\"expired\":true,\"externalUsers\":[],\"flags\":{\"idp:provisioned\":true,\"idp:role-restricted\":true,\"member-limit:restricted\":true,\"partnership:restricted\":true,\"sso:invalid\":true,\"sso:linked\":true},\"id\":270000006,\"inviteStatus\":\"approved\",\"inviterName\":\"example-inviterName\",\"isOnlyOwner\":true,\"name\":\"example-name\",\"orgRoleList\":[],\"pending\":true,\"roleName\":\"example-roleName\",\"teamRoleList\":[],\"user\":{\"avatarUrl\":\"example-avatarUrl\",\"dateJoined\":\"example-dateJoined\",\"email\":\"example-email\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"example-name\",\"username\":\"example-username\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/members/270000006/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"email\":\"changed-email\",\"expired\":true,\"externalUsers\":[],\"flags\":{\"idp:provisioned\":true,\"idp:role-restricted\":true,\"member-limit:restricted\":true,\"partnership:restricted\":true,\"sso:invalid\":true,\"sso:linked\":true},\"id\":270000006,\"inviteStatus\":\"approved\",\"inviterName\":\"example-inviterName\",\"isOnlyOwner\":true,\"name\":\"example-name\",\"orgRoleList\":[],\"pending\":true,\"roleName\":\"example-roleName\",\"teamRoleList\":[],\"user\":{\"avatarUrl\":\"example-avatarUrl\",\"dateJoined\":\"example-dateJoined\",\"email\":\"example-email\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"example-name\",\"username\":\"example-username\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/organizations/example-organization-id-or-slug/members/270000006/",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/members/270000006/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

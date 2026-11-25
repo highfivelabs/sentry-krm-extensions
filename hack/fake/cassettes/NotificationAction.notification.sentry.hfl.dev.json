@@ -1,0 +1,37 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/organizations/example-organization-id-or-slug/notifications/actions/",
+      "body": "{\"service_type\":\"example-service-type\",\"trigger_type\":\"example-trigger-type\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":270000005,\"integrationId\":1,\"organizationId\":1,\"sentryAppId\":1,\"serviceType\":\"example-serviceType\",\"targetDisplay\":\"example-targetDisplay\",\"targetIdentifier\":\"example-targetIdentifier\",\"targetType\":\"example-targetType\",\"triggerType\":\"example-triggerType\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/notifications/actions/270000005/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":270000005,\"integrationId\":1,\"organizationId\":1,\"sentryAppId\":1,\"serviceType\":\"example-serviceType\",\"targetDisplay\":\"example-targetDisplay\",\"targetIdentifier\":\"example-targetIdentifier\",\"targetType\":\"example-targetType\",\"triggerType\":\"example-triggerType\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/organizations/example-organization-id-or-slug/notifications/actions/270000005/",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/notifications/actions/270000005/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

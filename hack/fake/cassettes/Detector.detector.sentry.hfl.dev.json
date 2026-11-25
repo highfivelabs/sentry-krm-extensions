@@ -1,0 +1,89 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/organizations/{{cred:org}}/projects/{{run}}/detectors/",
+      "body": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"dataSources\":[{\"aggregate\":\"count()\",\"dataset\":\"events\",\"environment\":null,\"event_types\":[\"error\"],\"query\":\"\",\"query_type\":0,\"time_window\":60}],\"name\":\"{{name}}\",\"type\":\"metric_issue\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"createdBy\":\"example-createdBy\",\"dateCreated\":\"2000-01-01T00:00:00Z\",\"dateUpdated\":\"2000-01-01T00:00:00Z\",\"id\":270000007,\"latestGroup\":{\"culprit\":\"example-culprit\",\"firstSeen\":\"example-firstSeen\",\"id\":\"example-id\",\"issueCategory\":\"example-issueCategory\",\"issueType\":\"example-issueType\",\"lastSeen\":\"example-lastSeen\",\"level\":\"sample\",\"metadata\":{},\"numComments\":1,\"platform\":\"example-platform\",\"project\":{\"id\":\"example-id\",\"name\":\"example-name\",\"platform\":\"example-platform\",\"slug\":\"example-slug\"},\"shortId\":\"example-shortId\",\"status\":\"resolved\",\"substatus\":\"archived_until_escalating\",\"title\":\"example-title\",\"type\":\"default\"},\"name\":\"{{name}}\",\"projectId\":\"example-projectId\",\"type\":\"metric_issue\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/detectors/270000007/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"createdBy\":\"example-createdBy\",\"dateCreated\":\"2000-01-01T00:00:00Z\",\"dateUpdated\":\"2000-01-01T00:00:00Z\",\"id\":270000007,\"latestGroup\":{\"culprit\":\"example-culprit\",\"firstSeen\":\"example-firstSeen\",\"id\":\"example-id\",\"issueCategory\":\"example-issueCategory\",\"issueType\":\"example-issueType\",\"lastSeen\":\"example-lastSeen\",\"level\":\"sample\",\"metadata\":{},\"numComments\":1,\"platform\":\"example-platform\",\"project\":{\"id\":\"example-id\",\"name\":\"example-name\",\"platform\":\"example-platform\",\"slug\":\"example-slug\"},\"shortId\":\"example-shortId\",\"status\":\"resolved\",\"substatus\":\"archived_until_escalating\",\"title\":\"example-title\",\"type\":\"default\"},\"name\":\"{{name}}\",\"projectId\":\"example-projectId\",\"type\":\"metric_issue\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/detectors/270000007/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"createdBy\":\"example-createdBy\",\"dateCreated\":\"2000-01-01T00:00:00Z\",\"dateUpdated\":\"2000-01-01T00:00:00Z\",\"id\":270000007,\"latestGroup\":{\"culprit\":\"example-culprit\",\"firstSeen\":\"example-firstSeen\",\"id\":\"example-id\",\"issueCategory\":\"example-issueCategory\",\"issueType\":\"example-issueType\",\"lastSeen\":\"example-lastSeen\",\"level\":\"sample\",\"metadata\":{},\"numComments\":1,\"platform\":\"example-platform\",\"project\":{\"id\":\"example-id\",\"name\":\"example-name\",\"platform\":\"example-platform\",\"slug\":\"example-slug\"},\"shortId\":\"example-shortId\",\"status\":\"resolved\",\"substatus\":\"archived_until_escalating\",\"title\":\"example-title\",\"type\":\"default\"},\"name\":\"{{name}}\",\"projectId\":\"example-projectId\",\"type\":\"metric_issue\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/{{cred:org}}/detectors/270000007/",
+      "body": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"dataSources\":[{\"aggregate\":\"count()\",\"dataset\":\"events\",\"environment\":null,\"event_types\":[\"error\"],\"query\":\"\",\"query_type\":0,\"time_window\":60}],\"name\":\"{{name}}-renamed\",\"type\":\"metric_issue\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"createdBy\":\"example-createdBy\",\"dateCreated\":\"2000-01-01T00:00:00Z\",\"dateUpdated\":\"2000-01-01T00:00:00Z\",\"id\":270000007,\"latestGroup\":{\"culprit\":\"example-culprit\",\"firstSeen\":\"example-firstSeen\",\"id\":\"example-id\",\"issueCategory\":\"example-issueCategory\",\"issueType\":\"example-issueType\",\"lastSeen\":\"example-lastSeen\",\"level\":\"sample\",\"metadata\":{},\"numComments\":1,\"platform\":\"example-platform\",\"project\":{\"id\":\"example-id\",\"name\":\"example-name\",\"platform\":\"example-platform\",\"slug\":\"example-slug\"},\"shortId\":\"example-shortId\",\"status\":\"resolved\",\"substatus\":\"archived_until_escalating\",\"title\":\"example-title\",\"type\":\"default\"},\"name\":\"{{name}}-renamed\",\"projectId\":\"example-projectId\",\"type\":\"metric_issue\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/detectors/270000007/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"createdBy\":\"example-createdBy\",\"dateCreated\":\"2000-01-01T00:00:00Z\",\"dateUpdated\":\"2000-01-01T00:00:00Z\",\"id\":270000007,\"latestGroup\":{\"culprit\":\"example-culprit\",\"firstSeen\":\"example-firstSeen\",\"id\":\"example-id\",\"issueCategory\":\"example-issueCategory\",\"issueType\":\"example-issueType\",\"lastSeen\":\"example-lastSeen\",\"level\":\"sample\",\"metadata\":{},\"numComments\":1,\"platform\":\"example-platform\",\"project\":{\"id\":\"example-id\",\"name\":\"example-name\",\"platform\":\"example-platform\",\"slug\":\"example-slug\"},\"shortId\":\"example-shortId\",\"status\":\"resolved\",\"substatus\":\"archived_until_escalating\",\"title\":\"example-title\",\"type\":\"default\"},\"name\":\"{{name}}-renamed\",\"projectId\":\"example-projectId\",\"type\":\"metric_issue\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/{{cred:org}}/detectors/270000007/",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"createdBy\":\"example-createdBy\",\"dateCreated\":\"2000-01-01T00:00:00Z\",\"dateUpdated\":\"2000-01-01T00:00:00Z\",\"id\":270000007,\"latestGroup\":{\"culprit\":\"example-culprit\",\"firstSeen\":\"example-firstSeen\",\"id\":\"example-id\",\"issueCategory\":\"example-issueCategory\",\"issueType\":\"example-issueType\",\"lastSeen\":\"example-lastSeen\",\"level\":\"sample\",\"metadata\":{},\"numComments\":1,\"platform\":\"example-platform\",\"project\":{\"id\":\"example-id\",\"name\":\"example-name\",\"platform\":\"example-platform\",\"slug\":\"example-slug\"},\"shortId\":\"example-shortId\",\"status\":\"resolved\",\"substatus\":\"archived_until_escalating\",\"title\":\"example-title\",\"type\":\"default\"},\"name\":\"hfl-live-drift\",\"projectId\":\"example-projectId\",\"type\":\"metric_issue\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/detectors/270000007/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"createdBy\":\"example-createdBy\",\"dateCreated\":\"2000-01-01T00:00:00Z\",\"dateUpdated\":\"2000-01-01T00:00:00Z\",\"id\":270000007,\"latestGroup\":{\"culprit\":\"example-culprit\",\"firstSeen\":\"example-firstSeen\",\"id\":\"example-id\",\"issueCategory\":\"example-issueCategory\",\"issueType\":\"example-issueType\",\"lastSeen\":\"example-lastSeen\",\"level\":\"sample\",\"metadata\":{},\"numComments\":1,\"platform\":\"example-platform\",\"project\":{\"id\":\"example-id\",\"name\":\"example-name\",\"platform\":\"example-platform\",\"slug\":\"example-slug\"},\"shortId\":\"example-shortId\",\"status\":\"resolved\",\"substatus\":\"archived_until_escalating\",\"title\":\"example-title\",\"type\":\"default\"},\"name\":\"hfl-live-drift\",\"projectId\":\"example-projectId\",\"type\":\"metric_issue\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/{{cred:org}}/detectors/270000007/",
+      "body": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"dataSources\":[{\"aggregate\":\"count()\",\"dataset\":\"events\",\"environment\":null,\"event_types\":[\"error\"],\"query\":\"\",\"query_type\":0,\"time_window\":60}],\"name\":\"{{name}}-renamed\",\"type\":\"metric_issue\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"createdBy\":\"example-createdBy\",\"dateCreated\":\"2000-01-01T00:00:00Z\",\"dateUpdated\":\"2000-01-01T00:00:00Z\",\"id\":270000007,\"latestGroup\":{\"culprit\":\"example-culprit\",\"firstSeen\":\"example-firstSeen\",\"id\":\"example-id\",\"issueCategory\":\"example-issueCategory\",\"issueType\":\"example-issueType\",\"lastSeen\":\"example-lastSeen\",\"level\":\"sample\",\"metadata\":{},\"numComments\":1,\"platform\":\"example-platform\",\"project\":{\"id\":\"example-id\",\"name\":\"example-name\",\"platform\":\"example-platform\",\"slug\":\"example-slug\"},\"shortId\":\"example-shortId\",\"status\":\"resolved\",\"substatus\":\"archived_until_escalating\",\"title\":\"example-title\",\"type\":\"default\"},\"name\":\"{{name}}-renamed\",\"projectId\":\"example-projectId\",\"type\":\"metric_issue\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/detectors/270000007/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"conditionGroup\":{\"conditions\":[{\"comparison\":10,\"conditionResult\":75,\"type\":\"gt\"},{\"comparison\":5,\"conditionResult\":0,\"type\":\"lte\"}],\"logicType\":\"any\"},\"config\":{\"detectionType\":\"static\"},\"createdBy\":\"example-createdBy\",\"dateCreated\":\"2000-01-01T00:00:00Z\",\"dateUpdated\":\"2000-01-01T00:00:00Z\",\"id\":270000007,\"latestGroup\":{\"culprit\":\"example-culprit\",\"firstSeen\":\"example-firstSeen\",\"id\":\"example-id\",\"issueCategory\":\"example-issueCategory\",\"issueType\":\"example-issueType\",\"lastSeen\":\"example-lastSeen\",\"level\":\"sample\",\"metadata\":{},\"numComments\":1,\"platform\":\"example-platform\",\"project\":{\"id\":\"example-id\",\"name\":\"example-name\",\"platform\":\"example-platform\",\"slug\":\"example-slug\"},\"shortId\":\"example-shortId\",\"status\":\"resolved\",\"substatus\":\"archived_until_escalating\",\"title\":\"example-title\",\"type\":\"default\"},\"name\":\"{{name}}-renamed\",\"projectId\":\"example-projectId\",\"type\":\"metric_issue\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/organizations/{{cred:org}}/detectors/270000007/",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/detectors/270000007/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

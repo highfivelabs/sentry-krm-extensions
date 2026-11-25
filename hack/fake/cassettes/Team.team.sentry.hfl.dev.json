@@ -1,0 +1,89 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/organizations/{{cred:org}}/teams/",
+      "body": "{\"name\":\"{{name}}\",\"slug\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"access\":[],\"avatar\":{},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"externalTeams\":[],\"flags\":{},\"hasAccess\":true,\"id\":270000001,\"isMember\":true,\"isPending\":true,\"memberCount\":1,\"name\":\"{{name}}\",\"organization\":{\"allowMemberInvite\":true,\"allowMemberProjectCreation\":true,\"allowSuperuserAccess\":true,\"avatar\":{},\"dateCreated\":\"example-dateCreated\",\"hasAuthProvider\":true,\"id\":\"example-id\",\"isEarlyAdopter\":true,\"links\":{\"organizationUrl\":\"example-organizationUrl\",\"regionUrl\":\"example-regionUrl\"},\"name\":\"example-name\",\"require2FA\":true,\"slug\":\"example-slug\",\"status\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"projects\":[],\"slug\":\"{{name}}\",\"teamRole\":\"example-teamRole\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/{{cred:org}}/270000001/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"access\":[],\"avatar\":{},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"externalTeams\":[],\"flags\":{},\"hasAccess\":true,\"id\":270000001,\"isMember\":true,\"isPending\":true,\"memberCount\":1,\"name\":\"{{name}}\",\"organization\":{\"allowMemberInvite\":true,\"allowMemberProjectCreation\":true,\"allowSuperuserAccess\":true,\"avatar\":{},\"dateCreated\":\"example-dateCreated\",\"hasAuthProvider\":true,\"id\":\"example-id\",\"isEarlyAdopter\":true,\"links\":{\"organizationUrl\":\"example-organizationUrl\",\"regionUrl\":\"example-regionUrl\"},\"name\":\"example-name\",\"require2FA\":true,\"slug\":\"example-slug\",\"status\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"projects\":[],\"slug\":\"{{name}}\",\"teamRole\":\"example-teamRole\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/{{cred:org}}/270000001/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"access\":[],\"avatar\":{},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"externalTeams\":[],\"flags\":{},\"hasAccess\":true,\"id\":270000001,\"isMember\":true,\"isPending\":true,\"memberCount\":1,\"name\":\"{{name}}\",\"organization\":{\"allowMemberInvite\":true,\"allowMemberProjectCreation\":true,\"allowSuperuserAccess\":true,\"avatar\":{},\"dateCreated\":\"example-dateCreated\",\"hasAuthProvider\":true,\"id\":\"example-id\",\"isEarlyAdopter\":true,\"links\":{\"organizationUrl\":\"example-organizationUrl\",\"regionUrl\":\"example-regionUrl\"},\"name\":\"example-name\",\"require2FA\":true,\"slug\":\"example-slug\",\"status\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"projects\":[],\"slug\":\"{{name}}\",\"teamRole\":\"example-teamRole\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/teams/{{cred:org}}/270000001/",
+      "body": "{\"name\":\"{{name}}-renamed\",\"slug\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"access\":[],\"avatar\":{},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"externalTeams\":[],\"flags\":{},\"hasAccess\":true,\"id\":270000001,\"isMember\":true,\"isPending\":true,\"memberCount\":1,\"name\":\"{{name}}-renamed\",\"organization\":{\"allowMemberInvite\":true,\"allowMemberProjectCreation\":true,\"allowSuperuserAccess\":true,\"avatar\":{},\"dateCreated\":\"example-dateCreated\",\"hasAuthProvider\":true,\"id\":\"example-id\",\"isEarlyAdopter\":true,\"links\":{\"organizationUrl\":\"example-organizationUrl\",\"regionUrl\":\"example-regionUrl\"},\"name\":\"example-name\",\"require2FA\":true,\"slug\":\"example-slug\",\"status\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"projects\":[],\"slug\":\"{{name}}\",\"teamRole\":\"example-teamRole\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/{{cred:org}}/270000001/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"access\":[],\"avatar\":{},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"externalTeams\":[],\"flags\":{},\"hasAccess\":true,\"id\":270000001,\"isMember\":true,\"isPending\":true,\"memberCount\":1,\"name\":\"{{name}}-renamed\",\"organization\":{\"allowMemberInvite\":true,\"allowMemberProjectCreation\":true,\"allowSuperuserAccess\":true,\"avatar\":{},\"dateCreated\":\"example-dateCreated\",\"hasAuthProvider\":true,\"id\":\"example-id\",\"isEarlyAdopter\":true,\"links\":{\"organizationUrl\":\"example-organizationUrl\",\"regionUrl\":\"example-regionUrl\"},\"name\":\"example-name\",\"require2FA\":true,\"slug\":\"example-slug\",\"status\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"projects\":[],\"slug\":\"{{name}}\",\"teamRole\":\"example-teamRole\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/teams/{{cred:org}}/270000001/",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"access\":[],\"avatar\":{},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"externalTeams\":[],\"flags\":{},\"hasAccess\":true,\"id\":270000001,\"isMember\":true,\"isPending\":true,\"memberCount\":1,\"name\":\"hfl-live-drift\",\"organization\":{\"allowMemberInvite\":true,\"allowMemberProjectCreation\":true,\"allowSuperuserAccess\":true,\"avatar\":{},\"dateCreated\":\"example-dateCreated\",\"hasAuthProvider\":true,\"id\":\"example-id\",\"isEarlyAdopter\":true,\"links\":{\"organizationUrl\":\"example-organizationUrl\",\"regionUrl\":\"example-regionUrl\"},\"name\":\"example-name\",\"require2FA\":true,\"slug\":\"example-slug\",\"status\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"projects\":[],\"slug\":\"{{name}}\",\"teamRole\":\"example-teamRole\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/{{cred:org}}/270000001/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"access\":[],\"avatar\":{},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"externalTeams\":[],\"flags\":{},\"hasAccess\":true,\"id\":270000001,\"isMember\":true,\"isPending\":true,\"memberCount\":1,\"name\":\"hfl-live-drift\",\"organization\":{\"allowMemberInvite\":true,\"allowMemberProjectCreation\":true,\"allowSuperuserAccess\":true,\"avatar\":{},\"dateCreated\":\"example-dateCreated\",\"hasAuthProvider\":true,\"id\":\"example-id\",\"isEarlyAdopter\":true,\"links\":{\"organizationUrl\":\"example-organizationUrl\",\"regionUrl\":\"example-regionUrl\"},\"name\":\"example-name\",\"require2FA\":true,\"slug\":\"example-slug\",\"status\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"projects\":[],\"slug\":\"{{name}}\",\"teamRole\":\"example-teamRole\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/teams/{{cred:org}}/270000001/",
+      "body": "{\"name\":\"{{name}}-renamed\",\"slug\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"access\":[],\"avatar\":{},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"externalTeams\":[],\"flags\":{},\"hasAccess\":true,\"id\":270000001,\"isMember\":true,\"isPending\":true,\"memberCount\":1,\"name\":\"{{name}}-renamed\",\"organization\":{\"allowMemberInvite\":true,\"allowMemberProjectCreation\":true,\"allowSuperuserAccess\":true,\"avatar\":{},\"dateCreated\":\"example-dateCreated\",\"hasAuthProvider\":true,\"id\":\"example-id\",\"isEarlyAdopter\":true,\"links\":{\"organizationUrl\":\"example-organizationUrl\",\"regionUrl\":\"example-regionUrl\"},\"name\":\"example-name\",\"require2FA\":true,\"slug\":\"example-slug\",\"status\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"projects\":[],\"slug\":\"{{name}}\",\"teamRole\":\"example-teamRole\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/{{cred:org}}/270000001/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"access\":[],\"avatar\":{},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"externalTeams\":[],\"flags\":{},\"hasAccess\":true,\"id\":270000001,\"isMember\":true,\"isPending\":true,\"memberCount\":1,\"name\":\"{{name}}-renamed\",\"organization\":{\"allowMemberInvite\":true,\"allowMemberProjectCreation\":true,\"allowSuperuserAccess\":true,\"avatar\":{},\"dateCreated\":\"example-dateCreated\",\"hasAuthProvider\":true,\"id\":\"example-id\",\"isEarlyAdopter\":true,\"links\":{\"organizationUrl\":\"example-organizationUrl\",\"regionUrl\":\"example-regionUrl\"},\"name\":\"example-name\",\"require2FA\":true,\"slug\":\"example-slug\",\"status\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"projects\":[],\"slug\":\"{{name}}\",\"teamRole\":\"example-teamRole\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/teams/{{cred:org}}/270000001/",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/teams/{{cred:org}}/270000001/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

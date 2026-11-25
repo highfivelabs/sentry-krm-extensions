@@ -1,0 +1,37 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/organizations/example-organization-id-or-slug/repos/",
+      "body": "{\"identifier\":\"example-org/example-repo\",\"installation\":\"12345\",\"provider\":\"integrations:github\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"id\":270000010,\"identifier\":\"example-org/example-repo\",\"installation\":\"12345\",\"provider\":\"integrations:github\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/repos/270000010/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"id\":270000010,\"identifier\":\"example-org/example-repo\",\"installation\":\"12345\",\"provider\":\"integrations:github\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/organizations/example-organization-id-or-slug/repos/270000010/",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/repos/270000010/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

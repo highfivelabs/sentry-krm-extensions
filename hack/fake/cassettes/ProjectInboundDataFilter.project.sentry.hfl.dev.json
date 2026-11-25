@@ -1,0 +1,91 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[]\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[]\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/browser-extensions/",
+      "body": "{\"active\":true}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":true,\"id\":\"browser-extensions\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"active\":true,\"id\":\"browser-extensions\"}]\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"active\":true,\"id\":\"browser-extensions\"}]\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/browser-extensions/",
+      "body": "{\"active\":false}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":false,\"id\":\"browser-extensions\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"active\":false,\"id\":\"browser-extensions\"}]\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/browser-extensions/",
+      "body": "{\"active\":true}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":true,\"id\":\"browser-extensions\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"active\":true,\"id\":\"browser-extensions\"}]\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/browser-extensions/",
+      "body": "{\"active\":false}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"active\":false,\"id\":\"browser-extensions\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"active\":false,\"id\":\"browser-extensions\"}]\n"
+    }
+  ]
+}

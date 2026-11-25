@@ -1,0 +1,96 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "body": "{\"urls\":\"https://example.com/webhook\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"urls\":\"https://example.com/webhook\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"urls\":\"https://example.com/webhook\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"urls\":\"https://example.com/webhook\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "body": "{\"urls\":\"changed-urls\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"urls\":\"changed-urls\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"urls\":\"changed-urls\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "body": "{\"urls\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"urls\":\"hfl-live-drift\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"urls\":\"hfl-live-drift\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "body": "{\"urls\":\"changed-urls\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"urls\":\"changed-urls\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"urls\":\"changed-urls\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/projects/example-organization-id-or-slug/example-project-id-or-slug/plugins/webhooks/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/organizations/{{cred:org}}/dashboards/",
+      "body": "{\"title\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"createdBy\":{\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"example-dateJoined\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"expired\":true,\"id\":270000004,\"isFavorited\":true,\"prebuiltId\":1,\"queryPriority\":\"example-queryPriority\",\"title\":\"{{name}}\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/dashboards/270000004/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"createdBy\":{\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"example-dateJoined\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"expired\":true,\"id\":270000004,\"isFavorited\":true,\"prebuiltId\":1,\"queryPriority\":\"example-queryPriority\",\"title\":\"{{name}}\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/dashboards/270000004/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"createdBy\":{\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"example-dateJoined\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"expired\":true,\"id\":270000004,\"isFavorited\":true,\"prebuiltId\":1,\"queryPriority\":\"example-queryPriority\",\"title\":\"{{name}}\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/{{cred:org}}/dashboards/270000004/",
+      "body": "{\"title\":\"{{name}}-renamed\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"createdBy\":{\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"example-dateJoined\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"expired\":true,\"id\":270000004,\"isFavorited\":true,\"prebuiltId\":1,\"queryPriority\":\"example-queryPriority\",\"title\":\"{{name}}-renamed\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/dashboards/270000004/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"createdBy\":{\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"example-dateJoined\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"expired\":true,\"id\":270000004,\"isFavorited\":true,\"prebuiltId\":1,\"queryPriority\":\"example-queryPriority\",\"title\":\"{{name}}-renamed\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/{{cred:org}}/dashboards/270000004/",
+      "body": "{\"title\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"createdBy\":{\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"example-dateJoined\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"expired\":true,\"id\":270000004,\"isFavorited\":true,\"prebuiltId\":1,\"queryPriority\":\"example-queryPriority\",\"title\":\"hfl-live-drift\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/dashboards/270000004/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"createdBy\":{\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"example-dateJoined\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"expired\":true,\"id\":270000004,\"isFavorited\":true,\"prebuiltId\":1,\"queryPriority\":\"example-queryPriority\",\"title\":\"hfl-live-drift\"}"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/{{cred:org}}/dashboards/270000004/",
+      "body": "{\"title\":\"{{name}}-renamed\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"createdBy\":{\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"example-dateJoined\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"expired\":true,\"id\":270000004,\"isFavorited\":true,\"prebuiltId\":1,\"queryPriority\":\"example-queryPriority\",\"title\":\"{{name}}-renamed\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/dashboards/270000004/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"createdBy\":{\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"example-dateJoined\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":true,\"hasPasswordAuth\":true,\"id\":\"example-id\",\"isActive\":true,\"isManaged\":true,\"isStaff\":true,\"isSuperuser\":true,\"isSuspended\":true,\"lastActive\":\"example-lastActive\",\"lastLogin\":\"example-lastLogin\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"expired\":true,\"id\":270000004,\"isFavorited\":true,\"prebuiltId\":1,\"queryPriority\":\"example-queryPriority\",\"title\":\"{{name}}-renamed\"}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/organizations/{{cred:org}}/dashboards/270000004/",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/dashboards/270000004/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+# Inputs to krm-rest-runtime/gen/krmgen.py. The spec is pinned to the commit in its url;
+# hack/gen/fetch-specs.sh downloads it. overrides: map (Terraform type -> API item path),
+# exclude (Terraform types), excludePaths (API item paths).
+vendor: sentry
+title: Sentry
+groupSuffix: sentry.hfl.dev
+connectionKind: Connection
+credentialKeys:
+- token
+baseURLHelp: 'Sentry API base URL; default https://us.sentry.io/api/0 (EU data storage: https://de.sentry.io/api/0; self-hosted: https://<host>/api/0).'
+terraform:
+  provider: jianyuan/sentry
+  prefix: sentry
+  gaps: terraform-gaps.json
+specs:
+- file: specs/sentry.json
+  url: https://raw.githubusercontent.com/getsentry/sentry-api-schema/d8e95f7f3c95b8aa5f60983f6f2239b71ac529d6/openapi-derefed.json
+trailingSlash: true
+overrides:
+  map:
+    sentry_cron_monitor: /organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/
+    sentry_uptime_monitor: /organizations/{organization_id_or_slug}/detectors/{detector_id}/
+    sentry_metric_monitor: /organizations/{organization_id_or_slug}/detectors/{detector_id}/
+  kindNames:
+    /organizations/{organization_id_or_slug}/detectors/{detector_id}/: Detector
+  creates:
+    /teams/{organization_id_or_slug}/{team_id_or_slug}/: /organizations/{organization_id_or_slug}/teams/
+    /projects/{organization_id_or_slug}/{project_id_or_slug}/: /teams/{organization_id_or_slug}/{team_id_or_slug}/projects/
+    /organizations/{organization_id_or_slug}/detectors/{detector_id}/: /organizations/{organization_id_or_slug}/projects/{project_id_or_slug}/detectors/
+  # A deleted cron monitor still reads by its ID until a deletion task runs
+  # (more than ten minutes on the live run); its slug is freed at once.
+  idFrom:
+    /organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/: slug
+  # A cron monitor takes its project's slug and reads back the project object.
+  compare:
+    /organizations/{organization_id_or_slug}/monitors/{monitor_id_or_slug}/: {project: slugObject}
+  # A detector sends flat dataSources (query_type, dataset, ...) and reads back
+  # wrapped snuba_query_subscription objects (queryObj.snubaQuery.*).
+  writeOnly:
+    /organizations/{organization_id_or_slug}/detectors/{detector_id}/:
+    - dataSources
+  # The spec's organization response leaves these out, but a read returns
+  # them (found on the live run); only apdexThreshold, avatarType and
+  # cancelDeletion are never read back.
+  readable:
+    /organizations/{organization_id_or_slug}/:
+    - alertsMemberWrite
+    - allowJoinRequests
+    - allowSharedIssues
+    - attachmentsRole
+    - dataScrubber
+    - dataScrubberDefaults
+    - debugFilesRole
+    - defaultRole
+    - enhancedPrivacy
+    - eventsMemberAdmin
+    - hasGranularReplayPermissions
+    - hideAiFeatures
+    - issueAlertsThreadFlag
+    - metricAlertsThreadFlag
+    - openMembership
+    - relayDsnEndpoint
+    - relayPiiConfig
+    - replayAccessMembers
+    - safeFields
+    - scrapeJavaScript
+    - scrubIPAddresses
+    - sensitiveFields
+    - storeCrashReports
+    - trustedRelays

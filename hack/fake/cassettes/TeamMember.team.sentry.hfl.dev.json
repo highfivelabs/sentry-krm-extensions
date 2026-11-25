@@ -1,0 +1,51 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/members/12345/teams/example-team/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/organizations/example-organization-id-or-slug/members/12345/teams/example-team/",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/members/12345/teams/example-team/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/members/12345/teams/example-team/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/organizations/example-organization-id-or-slug/members/12345/teams/example-team/",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/example-organization-id-or-slug/members/12345/teams/example-team/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

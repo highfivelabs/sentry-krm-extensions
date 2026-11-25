@@ -1,0 +1,110 @@
+{
+  "recorded": "2026-11-20T23:57:05Z",
+  "target": "sentry.io",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"id\":\"browser-extensions\",\"active\":false},{\"id\":\"filtered-transaction\",\"active\":true},{\"id\":\"legacy-browsers\",\"active\":false},{\"id\":\"localhost\",\"active\":false},{\"id\":\"web-crawlers\",\"active\":false}]"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"id\":\"browser-extensions\",\"active\":false},{\"id\":\"filtered-transaction\",\"active\":true},{\"id\":\"legacy-browsers\",\"active\":false},{\"id\":\"localhost\",\"active\":false},{\"id\":\"web-crawlers\",\"active\":false}]"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/browser-extensions/",
+      "body": "{\"active\":true}",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"id\":\"browser-extensions\",\"active\":true},{\"id\":\"filtered-transaction\",\"active\":true},{\"id\":\"legacy-browsers\",\"active\":false},{\"id\":\"localhost\",\"active\":false},{\"id\":\"web-crawlers\",\"active\":false}]"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"id\":\"browser-extensions\",\"active\":true},{\"id\":\"filtered-transaction\",\"active\":true},{\"id\":\"legacy-browsers\",\"active\":false},{\"id\":\"localhost\",\"active\":false},{\"id\":\"web-crawlers\",\"active\":false}]"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"id\":\"browser-extensions\",\"active\":true},{\"id\":\"filtered-transaction\",\"active\":true},{\"id\":\"legacy-browsers\",\"active\":false},{\"id\":\"localhost\",\"active\":false},{\"id\":\"web-crawlers\",\"active\":false}]"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/browser-extensions/",
+      "body": "{\"active\":false}",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"id\":\"browser-extensions\",\"active\":false},{\"id\":\"filtered-transaction\",\"active\":true},{\"id\":\"legacy-browsers\",\"active\":false},{\"id\":\"localhost\",\"active\":false},{\"id\":\"web-crawlers\",\"active\":false}]"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"id\":\"browser-extensions\",\"active\":false},{\"id\":\"filtered-transaction\",\"active\":true},{\"id\":\"legacy-browsers\",\"active\":false},{\"id\":\"localhost\",\"active\":false},{\"id\":\"web-crawlers\",\"active\":false}]"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/browser-extensions/",
+      "body": "{\"active\":true}",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"id\":\"browser-extensions\",\"active\":true},{\"id\":\"filtered-transaction\",\"active\":true},{\"id\":\"legacy-browsers\",\"active\":false},{\"id\":\"localhost\",\"active\":false},{\"id\":\"web-crawlers\",\"active\":false}]"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/browser-extensions/",
+      "body": "{\"active\":false}",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"id\":\"browser-extensions\",\"active\":false},{\"id\":\"filtered-transaction\",\"active\":true},{\"id\":\"legacy-browsers\",\"active\":false},{\"id\":\"localhost\",\"active\":false},{\"id\":\"web-crawlers\",\"active\":false}]"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "[{\"id\":\"browser-extensions\",\"active\":false},{\"id\":\"filtered-transaction\",\"active\":true},{\"id\":\"legacy-browsers\",\"active\":false},{\"id\":\"localhost\",\"active\":false},{\"id\":\"web-crawlers\",\"active\":false}]"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/filters/browser-extensions/",
+      "body": "{\"active\":false}",
+      "status": 204
+    }
+  ]
+}

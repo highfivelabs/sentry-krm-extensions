@@ -1,0 +1,173 @@
+# Copyright 2026 High Five Labs
+# SPDX-License-Identifier: Apache-2.0
+#
+# Live tests (TestEveryKindLive, krm-rest-runtime's kindtest.Live): these
+# kinds, in this order, against the real API. Kinds not listed are not run
+# live. They skip, naming the secret, until it exists in Secret Manager; then
+#   KRM_LIVE=1 go test -tags live -run TestEveryKindLive -v .
+# Everything a run makes is named hfl-live-<stamp>-<hex>, deleted at the
+# end; the sweep deletes older leftovers. How it works and what the {{...}}
+# templates mean: krm-rest-runtime docs/live.md.
+#
+# The secret holds a user auth token (sntryu_..., scopes org:admin,
+# project:admin, team:admin) or an organization auth token (sntrys_...) and
+# the organization's slug; add baseURL for EU data storage
+# (https://de.sentry.io/api/0) or a self-hosted Sentry.
+#
+# The organization is a real one (Developer plan, free): a run makes one
+# team and one project named after the run, and the kinds below work inside
+# them. Organization changes only a Slack-threading flag (no Slack is
+# connected) and puts them back. Nothing is invited, nobody is notified, and
+# nothing costs money.
+secret: krm-live-sentry         # JSON: {"token": "sntryu_... or sntrys_...", "org": "<slug>"}
+target: sentry.io
+# The org's numeric ID names the account: a project key's DSN hosts are
+# https://o<org id>.ingest.us.sentry.io, and resources carry organizationId.
+redactFields: [organizationId]
+redactSubdomains: [ingest.us.sentry.io]
+
+before:
+- method: POST
+  path: "/organizations/{{cred:org}}/teams/"
+  body: {slug: "{{run}}", name: "{{run}}"}
+  save: {team: slug}
+- method: POST
+  path: "/teams/{{cred:org}}/{{var:team}}/projects/"
+  body: {name: "{{run}}", slug: "{{run}}", platform: other}
+  save: {project: slug}
+after:
+- {method: DELETE, path: "/projects/{{cred:org}}/{{var:project}}/", ok: [404]}
+- {method: DELETE, path: "/teams/{{cred:org}}/{{var:team}}/", ok: [404]}
+
+sweep:
+- {list: "/organizations/{{cred:org}}/projects/", name: slug, id: slug, delete: "/projects/{{cred:org}}/{id}/"}
+- {list: "/organizations/{{cred:org}}/teams/", name: slug, id: slug, delete: "/teams/{{cred:org}}/{id}/"}
+- {list: "/organizations/{{cred:org}}/monitors/", name: slug, id: slug, delete: "/organizations/{{cred:org}}/monitors/{id}/"}
+- {list: "/organizations/{{cred:org}}/dashboards/", name: title, id: id, delete: "/organizations/{{cred:org}}/dashboards/{id}/"}
+
+kinds:
+- kind: Team
+  replaceSample: true
+  spec: {organizationIdOrSlug: "{{cred:org}}", slug: "{{name}}", name: "{{name}}"}
+  change: {name: "{{name}}-renamed"}
+
+- kind: Project
+  replaceSample: true
+  spec: {organizationIdOrSlug: "{{cred:org}}", teamIdOrSlug: "{{var:team}}", name: "{{name}}", slug: "{{name}}", platform: other}
+  change: {platform: python}
+  drift: javascript
+  deleteWait: 120s
+
+- kind: Key
+  replaceSample: true
+  spec: {organizationIdOrSlug: "{{cred:org}}", projectIdOrSlug: "{{var:project}}", name: "{{name}}"}
+  change: {name: "{{name}}-renamed"}
+
+- kind: CronMonitor
+  replaceSample: true
+  spec:
+    organizationIdOrSlug: "{{cred:org}}"
+    project: "{{var:project}}"
+    name: "{{name}}"
+    slug: "{{name}}"
+    config: {schedule_type: crontab, schedule: "0 * * * *", checkin_margin: 5, max_runtime: 30}
+  change: {config: {schedule_type: crontab, schedule: "30 * * * *", checkin_margin: 5, max_runtime: 30}}
+  drift: {schedule_type: crontab, schedule: "15 * * * *", checkin_margin: 5, max_runtime: 30}
+  deleteWait: 120s
+
+- kind: Dashboard
+  replaceSample: true
+  spec: {organizationIdOrSlug: "{{cred:org}}", title: "{{name}}"}
+  change: {title: "{{name}}-renamed"}
+
+# The run's project starts with no rules (raw: null), which Sentry will
+# not take back ("may not be null"): the cleanup logs that, and the project
+# is deleted at the end anyway.
+- kind: ProjectOwnership
+  replaceSample: true
+  spec: {organizationIdOrSlug: "{{cred:org}}", projectIdOrSlug: "{{var:project}}", raw: "path:*.py #{{var:team}}"}
+  change: {raw: "path:*.go #{{var:team}}"}
+  drift: "path:*.js #{{var:team}}"
+
+# Slack threading of alert notifications: no Slack is connected, so the
+# flag changes nothing; the run puts it back as it was.
+- kind: Organization
+  replaceSample: true
+  spec: {organizationIdOrSlug: "{{cred:org}}", issueAlertsThreadFlag: false}
+  change: {issueAlertsThreadFlag: true}
+  drift: false
+
+# Tried 2026-11-16 as email to the run's (emptied) team: Sentry answers
+# "Combination of trigger_type, service_type and target_type has not been
+# registered". Spike protection is the only trigger, and the combinations
+# it takes reach a person (email to a user, sentry_notification to the
+# organization's members) or an integration (Slack, PagerDuty, Opsgenie).
+- kind: NotificationAction
+  skip: every spike-protection target Sentry accepts is a person or an integration; this organization is a real one
+
+- kind: OrganizationMember
+  skip: the token has no member scopes (listing members answers 403) and the Developer plan has one seat; an invite would also email a person
+
+- kind: Detector
+  replaceSample: true
+  spec:
+    organizationIdOrSlug: "{{cred:org}}"
+    projectIdOrSlug: "{{var:project}}"
+    name: "{{name}}"
+    type: metric_issue
+    dataSources:
+    - query_type: 0
+      dataset: events
+      query: ""
+      aggregate: "count()"
+      time_window: 60
+      environment: null
+      event_types: [error]
+    config:
+      detectionType: static
+    conditionGroup:
+      logicType: any
+      conditions:
+      - type: gt
+        comparison: 10
+        conditionResult: 75
+      - type: lte
+        comparison: 5
+        conditionResult: 0
+  change: {name: "{{name}}-renamed"}
+
+- kind: IssueAlert
+  skip: legacy /projects/{org}/{project}/rules/ endpoint returns 404 on this Sentry organization (replaced by Detectors and Workflows)
+
+- kind: MetricAlert
+  skip: legacy /organizations/{org}/alert-rules/ endpoint returns 404 on this Sentry organization (replaced by Detectors and Workflows)
+
+- kind: Plugin
+  skip: legacy /projects/{org}/{project}/plugins/ endpoint returns 404 on this Sentry organization
+
+- kind: OrganizationRepository
+  skip: requires an installed VCS integration (GitHub, GitLab, or Bitbucket) in the organization
+
+- kind: OrganizationCodeMapping
+  skip: requires an installed VCS integration and repository in the organization
+
+- kind: ProjectSymbolSource
+  skip: Sentry reads/updates/deletes symbol sources by ?id= query parameter and regenerates id on PUT (requires runtime support)
+
+- kind: TeamMember
+  skip: the token has no member scopes and touching the owner user in a real organization is unsafe
+
+- kind: IntegrationOpsgenie
+  skip: requires an installed Opsgenie integration in the organization
+
+- kind: IntegrationPagerduty
+  skip: requires an installed PagerDuty integration in the organization
+
+- kind: ProjectInboundDataFilter
+  replaceSample: true
+  spec: {organizationIdOrSlug: "{{cred:org}}", projectIdOrSlug: "{{var:project}}", filterId: browser-extensions, active: true}
+  change: {active: false}
+  drift: true
+
+- kind: ProjectSpikeProtection
+  skip: Sentry reads back spike protection via project options["quotas:spike-protection-disabled"] rather than a {"projects":[...]} list

@@ -1,0 +1,22 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/organizations/{{cred:org}}/teams/",
+      "body": "{\"name\":\"{{run}}\",\"slug\":\"{{run}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000001,\"name\":\"{{run}}\",\"slug\":\"{{run}}\"}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/teams/{{cred:org}}/{{run}}/projects/",
+      "body": "{\"name\":\"{{run}}\",\"platform\":\"other\",\"slug\":\"{{run}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000002,\"name\":\"{{run}}\",\"platform\":\"other\",\"slug\":\"{{run}}\"}\n"
+    }
+  ]
+}

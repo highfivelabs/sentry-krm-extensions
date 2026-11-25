@@ -1,0 +1,89 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/organizations/{{cred:org}}/monitors/",
+      "body": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"0 * * * *\",\"schedule_type\":\"crontab\"},\"name\":\"{{name}}\",\"project\":\"{{run}}\",\"slug\":\"{{name}}\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"0 * * * *\",\"schedule_type\":\"crontab\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"environments\":[],\"isMuted\":true,\"isUpserting\":true,\"name\":\"{{name}}\",\"project\":{\"id\":\"1\",\"slug\":\"{{run}}\"},\"slug\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/monitors/{{name}}/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"0 * * * *\",\"schedule_type\":\"crontab\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"environments\":[],\"isMuted\":true,\"isUpserting\":true,\"name\":\"{{name}}\",\"project\":{\"id\":\"1\",\"slug\":\"{{run}}\"},\"slug\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/monitors/{{name}}/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"0 * * * *\",\"schedule_type\":\"crontab\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"environments\":[],\"isMuted\":true,\"isUpserting\":true,\"name\":\"{{name}}\",\"project\":{\"id\":\"1\",\"slug\":\"{{run}}\"},\"slug\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/{{cred:org}}/monitors/{{name}}/",
+      "body": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"30 * * * *\",\"schedule_type\":\"crontab\"},\"name\":\"{{name}}\",\"project\":\"{{run}}\",\"slug\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"30 * * * *\",\"schedule_type\":\"crontab\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"environments\":[],\"isMuted\":true,\"isUpserting\":true,\"name\":\"{{name}}\",\"project\":{\"id\":\"1\",\"slug\":\"{{run}}\"},\"slug\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/monitors/{{name}}/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"30 * * * *\",\"schedule_type\":\"crontab\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"environments\":[],\"isMuted\":true,\"isUpserting\":true,\"name\":\"{{name}}\",\"project\":{\"id\":\"1\",\"slug\":\"{{run}}\"},\"slug\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/{{cred:org}}/monitors/{{name}}/",
+      "body": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"15 * * * *\",\"schedule_type\":\"crontab\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"15 * * * *\",\"schedule_type\":\"crontab\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"environments\":[],\"isMuted\":true,\"isUpserting\":true,\"name\":\"{{name}}\",\"project\":{\"id\":\"1\",\"slug\":\"{{run}}\"},\"slug\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/monitors/{{name}}/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"15 * * * *\",\"schedule_type\":\"crontab\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"environments\":[],\"isMuted\":true,\"isUpserting\":true,\"name\":\"{{name}}\",\"project\":{\"id\":\"1\",\"slug\":\"{{run}}\"},\"slug\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/organizations/{{cred:org}}/monitors/{{name}}/",
+      "body": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"30 * * * *\",\"schedule_type\":\"crontab\"},\"name\":\"{{name}}\",\"project\":\"{{run}}\",\"slug\":\"{{name}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"30 * * * *\",\"schedule_type\":\"crontab\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"environments\":[],\"isMuted\":true,\"isUpserting\":true,\"name\":\"{{name}}\",\"project\":{\"id\":\"1\",\"slug\":\"{{run}}\"},\"slug\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/monitors/{{name}}/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"config\":{\"checkin_margin\":5,\"max_runtime\":30,\"schedule\":\"30 * * * *\",\"schedule_type\":\"crontab\"},\"dateCreated\":\"2000-01-01T00:00:00Z\",\"environments\":[],\"isMuted\":true,\"isUpserting\":true,\"name\":\"{{name}}\",\"project\":{\"id\":\"1\",\"slug\":\"{{run}}\"},\"slug\":\"{{name}}\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/organizations/{{cred:org}}/monitors/{{name}}/",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/organizations/{{cred:org}}/monitors/{{name}}/",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

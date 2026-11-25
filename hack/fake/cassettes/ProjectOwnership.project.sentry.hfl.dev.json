@@ -1,0 +1,99 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "body": "{\"raw\":\"path:*.py #{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"raw\":\"path:*.py #{{run}}\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"raw\":\"path:*.py #{{run}}\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"raw\":\"path:*.py #{{run}}\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "body": "{\"raw\":\"path:*.go #{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"raw\":\"path:*.go #{{run}}\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"raw\":\"path:*.go #{{run}}\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "body": "{\"raw\":\"path:*.js #{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"raw\":\"path:*.js #{{run}}\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"raw\":\"path:*.js #{{run}}\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "body": "{\"raw\":\"path:*.go #{{run}}\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"raw\":\"path:*.go #{{run}}\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"raw\":\"path:*.go #{{run}}\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/projects/{{cred:org}}/{{run}}/ownership/",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"dateCreated\":\"2000-01-01T00:00:00Z\",\"isActive\":true,\"lastUpdated\":\"2000-01-01T00:00:00Z\",\"raw\":\"path:*.go #{{run}}\",\"schema\":{\"$version\":1,\"rules\":[]}}\n"
+    }
+  ]
+}

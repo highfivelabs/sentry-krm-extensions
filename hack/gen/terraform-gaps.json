@@ -1,0 +1,34 @@
+{
+ "jianyuan/sentry": {
+  "tf_version": "0.15.8",
+  "downloads": 29510829,
+  "total": 24,
+  "covered_by_operators": [],
+  "gaps": [
+   "sentry_alert",
+   "sentry_all_projects_spike_protection",
+   "sentry_cron_monitor",
+   "sentry_dashboard",
+   "sentry_integration_opsgenie",
+   "sentry_integration_pagerduty",
+   "sentry_issue_alert",
+   "sentry_key",
+   "sentry_metric_alert",
+   "sentry_metric_monitor",
+   "sentry_notification_action",
+   "sentry_organization",
+   "sentry_organization_code_mapping",
+   "sentry_organization_member",
+   "sentry_organization_repository",
+   "sentry_plugin",
+   "sentry_project",
+   "sentry_project_inbound_data_filter",
+   "sentry_project_ownership",
+   "sentry_project_spike_protection",
+   "sentry_project_symbol_source",
+   "sentry_team",
+   "sentry_team_member",
+   "sentry_uptime_monitor"
+  ]
+ }
+}
