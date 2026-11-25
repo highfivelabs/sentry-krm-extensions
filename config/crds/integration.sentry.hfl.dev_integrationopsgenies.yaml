@@ -1,0 +1,135 @@
+# Generated from hack/handwritten/types.yaml by hack/handwritten/merge.py. DO NOT EDIT.
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: integrationopsgenies.integration.sentry.hfl.dev
+  annotations:
+    hfl.dev/terraform: sentry_integration_opsgenie
+    hfl.dev/api-path: /organizations/{organization_id_or_slug}/integrations/{integration_id}/
+    hfl.dev/readiness: fake
+spec:
+  group: integration.sentry.hfl.dev
+  scope: Namespaced
+  names:
+    kind: IntegrationOpsgenie
+    listKind: IntegrationOpsgenieList
+    plural: integrationopsgenies
+    singular: integrationopsgenie
+    categories:
+    - hfl
+    - sentry
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+    subresources:
+      status: {}
+    additionalPrinterColumns:
+    - name: Ready
+      type: string
+      jsonPath: .status.conditions[?(@.type=="Ready")].status
+    - name: Reason
+      type: string
+      jsonPath: .status.conditions[?(@.type=="Ready")].reason
+    - name: Age
+      type: date
+      jsonPath: .metadata.creationTimestamp
+    schema:
+      openAPIV3Schema:
+        type: object
+        description: 'IntegrationOpsgenie: settings resource at /organizations/{organization_id_or_slug}/integrations/{integration_id}/.
+          Terraform equivalent: sentry_integration_opsgenie. Fields keep the API''s
+          own names.'
+        properties:
+          apiVersion:
+            type: string
+          kind:
+            type: string
+          metadata:
+            type: object
+          spec:
+            type: object
+            properties:
+              organizationIdOrSlug:
+                type: string
+              integrationId:
+                type: string
+              team_table:
+                type: array
+                items:
+                  type: object
+                  x-kubernetes-preserve-unknown-fields: true
+              connectionRef:
+                type: object
+                description: The Connection to use; default "default" in the same
+                  namespace.
+                properties:
+                  name:
+                    type: string
+              secretRefs:
+                type: object
+                description: 'Fill body fields from Secrets: {<field>: {name, key}}.
+                  Use for tokens, passwords and secret values.'
+                additionalProperties:
+                  type: object
+                  required:
+                  - name
+                  - key
+                  properties:
+                    name:
+                      type: string
+                    key:
+                      type: string
+                maxProperties: 64
+              fieldRefs:
+                type: object
+                description: 'Fill spec fields from other objects in this namespace:
+                  {<field>: {kind, name, fieldPath}}. fieldPath defaults to status.id,
+                  taken once that object is Ready; apiVersion is needed only where
+                  the kind''s name is in more than one group. Nothing is sent until
+                  every reference resolves.'
+                maxProperties: 64
+                additionalProperties:
+                  type: object
+                  required:
+                  - kind
+                  - name
+                  properties:
+                    apiVersion:
+                      type: string
+                    kind:
+                      type: string
+                    name:
+                      type: string
+                    fieldPath:
+                      type: string
+                      description: Default status.id.
+            x-kubernetes-validations:
+            - rule: has(self.organizationIdOrSlug) || (has(self.fieldRefs) && 'organizationIdOrSlug'
+                in self.fieldRefs)
+              message: spec.organizationIdOrSlug is required (or set it from spec.fieldRefs.organizationIdOrSlug)
+            - rule: has(self.integrationId) || (has(self.fieldRefs) && 'integrationId'
+                in self.fieldRefs)
+              message: spec.integrationId is required (or set it from spec.fieldRefs.integrationId)
+            required:
+            - team_table
+          status:
+            type: object
+            x-kubernetes-preserve-unknown-fields: true
+            properties:
+              id:
+                type: string
+              appliedHash:
+                type: string
+              observedGeneration:
+                type: integer
+              atProvider:
+                type: object
+                x-kubernetes-preserve-unknown-fields: true
+              conditions:
+                type: array
+                items:
+                  type: object
+                  x-kubernetes-preserve-unknown-fields: true
+        required:
+        - spec
