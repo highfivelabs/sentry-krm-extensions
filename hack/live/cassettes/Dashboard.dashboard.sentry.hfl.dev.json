@@ -1,5 +1,5 @@
 {
-  "recorded": "2026-11-20T23:56:51Z",
+  "recorded": "2026-11-27T20:46:08Z",
   "target": "sentry.io",
   "vars": {
     "project": "{{run}}",
@@ -12,75 +12,75 @@
       "body": "{\"title\":\"{{name}}\"}",
       "status": 201,
       "contentType": "application/json",
-      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-10T16:36:45.815118Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5168782\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-16T06:48:50.528889Z\",\"lastLogin\":\"2026-11-11T01:43:14.402445Z\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-20T23:56:49.282918Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10848191\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}\",\"widgets\":[]}"
+      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-27T19:56:42.963553Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5225006\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-27T19:56:42.963560Z\",\"lastLogin\":null,\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-27T20:46:08.265922Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10911939\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}\",\"widgets\":[]}"
     },
     {
       "method": "GET",
-      "path": "/organizations/{{cred:org}}/dashboards/10848191/",
+      "path": "/organizations/{{cred:org}}/dashboards/10911939/",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-10T16:36:45.815118Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5168782\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-16T06:48:50.528889Z\",\"lastLogin\":\"2026-11-11T01:43:14.402445Z\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-20T23:56:49.282918Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10848191\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}\",\"widgets\":[]}"
+      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-27T19:56:42.963553Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5225006\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-27T19:56:42.963560Z\",\"lastLogin\":null,\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-27T20:46:08.265922Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10911939\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}\",\"widgets\":[]}"
     },
     {
       "method": "GET",
-      "path": "/organizations/{{cred:org}}/dashboards/10848191/",
+      "path": "/organizations/{{cred:org}}/dashboards/10911939/",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-10T16:36:45.815118Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5168782\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-16T06:48:50.528889Z\",\"lastLogin\":\"2026-11-11T01:43:14.402445Z\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-20T23:56:49.282918Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10848191\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}\",\"widgets\":[]}"
+      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-27T19:56:42.963553Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5225006\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-27T19:56:42.963560Z\",\"lastLogin\":null,\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-27T20:46:08.265922Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10911939\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}\",\"widgets\":[]}"
     },
     {
       "method": "PUT",
-      "path": "/organizations/{{cred:org}}/dashboards/10848191/",
+      "path": "/organizations/{{cred:org}}/dashboards/10911939/",
       "body": "{\"title\":\"{{name}}-renamed\"}",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-10T16:36:45.815118Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5168782\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-16T06:48:50.528889Z\",\"lastLogin\":\"2026-11-11T01:43:14.402445Z\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-20T23:56:49.282918Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10848191\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}-renamed\",\"widgets\":[]}"
+      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-27T19:56:42.963553Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5225006\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-27T19:56:42.963560Z\",\"lastLogin\":null,\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-27T20:46:08.265922Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10911939\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}-renamed\",\"widgets\":[]}"
     },
     {
       "method": "GET",
-      "path": "/organizations/{{cred:org}}/dashboards/10848191/",
+      "path": "/organizations/{{cred:org}}/dashboards/10911939/",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-10T16:36:45.815118Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5168782\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-16T06:48:50.528889Z\",\"lastLogin\":\"2026-11-11T01:43:14.402445Z\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-20T23:56:49.282918Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10848191\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}-renamed\",\"widgets\":[]}"
+      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-27T19:56:42.963553Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5225006\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-27T19:56:42.963560Z\",\"lastLogin\":null,\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-27T20:46:08.265922Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10911939\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}-renamed\",\"widgets\":[]}"
     },
     {
       "method": "PUT",
-      "path": "/organizations/{{cred:org}}/dashboards/10848191/",
+      "path": "/organizations/{{cred:org}}/dashboards/10911939/",
       "body": "{\"title\":\"hfl-live-drift\"}",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-10T16:36:45.815118Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5168782\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-16T06:48:50.528889Z\",\"lastLogin\":\"2026-11-11T01:43:14.402445Z\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-20T23:56:49.282918Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10848191\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"hfl-live-drift\",\"widgets\":[]}"
+      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-27T19:56:42.963553Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5225006\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-27T19:56:42.963560Z\",\"lastLogin\":null,\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-27T20:46:08.265922Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10911939\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"hfl-live-drift\",\"widgets\":[]}"
     },
     {
       "method": "GET",
-      "path": "/organizations/{{cred:org}}/dashboards/10848191/",
+      "path": "/organizations/{{cred:org}}/dashboards/10911939/",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-10T16:36:45.815118Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5168782\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-16T06:48:50.528889Z\",\"lastLogin\":\"2026-11-11T01:43:14.402445Z\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-20T23:56:49.282918Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10848191\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"hfl-live-drift\",\"widgets\":[]}"
+      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-27T19:56:42.963553Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5225006\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-27T19:56:42.963560Z\",\"lastLogin\":null,\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-27T20:46:08.265922Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10911939\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"hfl-live-drift\",\"widgets\":[]}"
     },
     {
       "method": "PUT",
-      "path": "/organizations/{{cred:org}}/dashboards/10848191/",
+      "path": "/organizations/{{cred:org}}/dashboards/10911939/",
       "body": "{\"title\":\"{{name}}-renamed\"}",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-10T16:36:45.815118Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5168782\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-16T06:48:50.528889Z\",\"lastLogin\":\"2026-11-11T01:43:14.402445Z\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-20T23:56:49.282918Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10848191\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}-renamed\",\"widgets\":[]}"
+      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-27T19:56:42.963553Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5225006\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-27T19:56:42.963560Z\",\"lastLogin\":null,\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-27T20:46:08.265922Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10911939\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}-renamed\",\"widgets\":[]}"
     },
     {
       "method": "GET",
-      "path": "/organizations/{{cred:org}}/dashboards/10848191/",
+      "path": "/organizations/{{cred:org}}/dashboards/10911939/",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-10T16:36:45.815118Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5168782\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-16T06:48:50.528889Z\",\"lastLogin\":\"2026-11-11T01:43:14.402445Z\",\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-20T23:56:49.282918Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10848191\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}-renamed\",\"widgets\":[]}"
+      "response": "{\"createdBy\":{\"avatar\":{\"avatarType\":\"letter_avatar\",\"avatarUrl\":null,\"avatarUuid\":null},\"avatarUrl\":\"{{redacted}}\",\"dateJoined\":\"2026-11-27T19:56:42.963553Z\",\"email\":\"{{redacted}}\",\"emails\":[],\"experiments\":{},\"has2fa\":false,\"hasPasswordAuth\":false,\"id\":\"5225006\",\"isActive\":true,\"isManaged\":false,\"isStaff\":false,\"isSuperuser\":false,\"isSuspended\":false,\"lastActive\":\"2026-11-27T19:56:42.963560Z\",\"lastLogin\":null,\"name\":\"{{redacted}}\",\"username\":\"{{redacted}}\"},\"dateCreated\":\"2026-11-27T20:46:08.265922Z\",\"environment\":[],\"expired\":false,\"filters\":{},\"id\":\"10911939\",\"isFavorited\":false,\"permissions\":null,\"prebuiltId\":null,\"projects\":[],\"queryPriority\":\"normal\",\"title\":\"{{name}}-renamed\",\"widgets\":[]}"
     },
     {
       "method": "DELETE",
-      "path": "/organizations/{{cred:org}}/dashboards/10848191/",
+      "path": "/organizations/{{cred:org}}/dashboards/10911939/",
       "status": 204
     },
     {
       "method": "GET",
-      "path": "/organizations/{{cred:org}}/dashboards/10848191/",
+      "path": "/organizations/{{cred:org}}/dashboards/10911939/",
       "status": 404,
       "contentType": "application/json",
       "response": "{\"detail\":\"The requested resource does not exist\"}"
