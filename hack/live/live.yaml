@@ -9,17 +9,22 @@
 # end; the sweep deletes older leftovers. How it works and what the {{...}}
 # templates mean: krm-rest-runtime docs/live.md.
 #
-# The secret holds a user auth token (sntryu_..., scopes org:admin,
-# project:admin, team:admin) or an organization auth token (sntrys_...) and
-# the organization's slug; add baseURL for EU data storage
-# (https://de.sentry.io/api/0) or a self-hosted Sentry.
+# The organization is a dedicated test organization with nothing else in
+# it: a run makes one team and one project named after the run, and the
+# kinds below work inside them. Organization changes only a Slack-threading
+# flag (no Slack is connected) and puts it back. Nothing is invited, nobody
+# is notified, and nothing costs money. The sweep's hfl-live- prefix is
+# cleanup hygiene: it finds what earlier runs left behind.
 #
-# The organization is a real one (Developer plan, free): a run makes one
-# team and one project named after the run, and the kinds below work inside
-# them. Organization changes only a Slack-threading flag (no Slack is
-# connected) and puts them back. Nothing is invited, nobody is notified, and
-# nothing costs money.
-secret: krm-live-sentry         # JSON: {"token": "sntryu_... or sntrys_...", "org": "<slug>"}
+# The secret holds the token of an internal integration in that
+# organization (Settings > Developer Settings > Custom Integrations), which
+# is scoped to it, and the organization's slug; add baseURL for EU data
+# storage (https://de.sentry.io/api/0) or a self-hosted Sentry. Recommended
+# permissions: Project Admin, Team Admin, Organization Read & Write, Member
+# Read, Alerts Read & Write, Issue & Event Read, Release none. An
+# organization auth token (sntrys_...) cannot create the team and project
+# each run makes. Setup: krm-rest-runtime docs/live-accounts/sentry.md.
+secret: krm-live-sentry         # JSON: {"token": "<internal integration token>", "org": "<slug>"}, optional "baseURL"
 target: sentry.io
 # The org's numeric ID names the account: a project key's DSN hosts are
 # https://o<org id>.ingest.us.sentry.io, and resources carry organizationId.
@@ -103,10 +108,10 @@ kinds:
 # it takes reach a person (email to a user, sentry_notification to the
 # organization's members) or an integration (Slack, PagerDuty, Opsgenie).
 - kind: NotificationAction
-  skip: every spike-protection target Sentry accepts is a person or an integration; this organization is a real one
+  skip: every spike-protection target Sentry accepts reaches a person or an integration
 
 - kind: OrganizationMember
-  skip: the token has no member scopes (listing members answers 403) and the Developer plan has one seat; an invite would also email a person
+  skip: the token has Member Read only, so it cannot invite or change members; an invite would also email a person
 
 - kind: Detector
   replaceSample: true
@@ -155,7 +160,7 @@ kinds:
   skip: Sentry reads/updates/deletes symbol sources by ?id= query parameter and regenerates id on PUT (requires runtime support)
 
 - kind: TeamMember
-  skip: the token has no member scopes and touching the owner user in a real organization is unsafe
+  skip: the token has Member Read only, so it cannot add or remove team members
 
 - kind: IntegrationOpsgenie
   skip: requires an installed Opsgenie integration in the organization

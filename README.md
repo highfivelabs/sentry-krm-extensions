@@ -23,7 +23,7 @@ both `sentry_project_spike_protection` and `sentry_all_projects_spike_protection
 **Readiness:** **9 kinds** are proven `live` against `sentry.io` (`TestEveryKindLive`);
 the remaining **12 kinds** are `fake` (proven against the fake API built from `types.yaml`
 via `TestEveryKindOnFake`, skipped in `hack/live/live.yaml` where the test organization
-lacks integrations/member scopes, uses newer Detectors/Workflows instead of legacy endpoints,
+lacks integrations and member write access, uses newer Detectors/Workflows instead of legacy endpoints,
 or where read-back uses a different shape).
 
 ## How it works
