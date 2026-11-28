@@ -1,6 +1,10 @@
 {
-  "recorded": "2026-11-20T23:57:05Z",
+  "recorded": "2026-11-27T20:46:25Z",
   "target": "sentry.io",
+  "vars": {
+    "project": "{{run}}",
+    "team": "{{run}}"
+  },
   "interactions": [
     {
       "method": "DELETE",

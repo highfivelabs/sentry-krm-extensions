@@ -1,5 +1,5 @@
 {
-  "recorded": "2026-11-20T23:56:54Z",
+  "recorded": "2026-11-27T20:46:10Z",
   "target": "sentry.io",
   "vars": {
     "project": "{{run}}",
@@ -26,21 +26,21 @@
       "body": "{\"raw\":\"path:*.py #{{run}}\"}",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"raw\":\"path:*.py #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-20T23:56:52.557993Z\",\"lastUpdated\":\"2026-11-20T23:56:52.557993Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.py\"},\"owners\":[{\"type\":\"team\",\"identifier\":\"{{run}}\",\"id\":\"4512466791890944\"}]}]}}"
+      "response": "{\"raw\":\"path:*.py #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-27T20:46:11.471883Z\",\"lastUpdated\":\"2026-11-27T20:46:11.471883Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.py\"},\"owners\":[{\"type\":\"team\",\"identifier\":\"{{run}}\",\"id\":\"4512505678004224\"}]}]}}"
     },
     {
       "method": "GET",
       "path": "/projects/{{cred:org}}/{{run}}/ownership/",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"raw\":\"path:*.py #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-20T23:56:52.557993Z\",\"lastUpdated\":\"2026-11-20T23:56:52.557993Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.py\"},\"owners\":[{\"type\":\"team\",\"id\":\"4512466791890944\",\"name\":\"{{run}}\"}]}]}}"
+      "response": "{\"raw\":\"path:*.py #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-27T20:46:11.471883Z\",\"lastUpdated\":\"2026-11-27T20:46:11.471883Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.py\"},\"owners\":[{\"type\":\"team\",\"id\":\"4512505678004224\",\"name\":\"{{run}}\"}]}]}}"
     },
     {
       "method": "GET",
       "path": "/projects/{{cred:org}}/{{run}}/ownership/",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"raw\":\"path:*.py #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-20T23:56:52.557993Z\",\"lastUpdated\":\"2026-11-20T23:56:52.557993Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.py\"},\"owners\":[{\"type\":\"team\",\"id\":\"4512466791890944\",\"name\":\"{{run}}\"}]}]}}"
+      "response": "{\"raw\":\"path:*.py #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-27T20:46:11.471883Z\",\"lastUpdated\":\"2026-11-27T20:46:11.471883Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.py\"},\"owners\":[{\"type\":\"team\",\"id\":\"4512505678004224\",\"name\":\"{{run}}\"}]}]}}"
     },
     {
       "method": "PUT",
@@ -48,14 +48,14 @@
       "body": "{\"raw\":\"path:*.go #{{run}}\"}",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"raw\":\"path:*.go #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-20T23:56:52.557993Z\",\"lastUpdated\":\"2026-11-20T23:56:53.415945Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.go\"},\"owners\":[{\"type\":\"team\",\"identifier\":\"{{run}}\",\"id\":\"4512466791890944\"}]}]}}"
+      "response": "{\"raw\":\"path:*.go #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-27T20:46:11.471883Z\",\"lastUpdated\":\"2026-11-27T20:46:12.280666Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.go\"},\"owners\":[{\"type\":\"team\",\"identifier\":\"{{run}}\",\"id\":\"4512505678004224\"}]}]}}"
     },
     {
       "method": "GET",
       "path": "/projects/{{cred:org}}/{{run}}/ownership/",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"raw\":\"path:*.go #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-20T23:56:52.557993Z\",\"lastUpdated\":\"2026-11-20T23:56:53.415945Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.go\"},\"owners\":[{\"type\":\"team\",\"id\":\"4512466791890944\",\"name\":\"{{run}}\"}]}]}}"
+      "response": "{\"raw\":\"path:*.go #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-27T20:46:11.471883Z\",\"lastUpdated\":\"2026-11-27T20:46:12.280666Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.go\"},\"owners\":[{\"type\":\"team\",\"id\":\"4512505678004224\",\"name\":\"{{run}}\"}]}]}}"
     },
     {
       "method": "PUT",
@@ -63,14 +63,14 @@
       "body": "{\"raw\":\"path:*.js #{{run}}\"}",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"raw\":\"path:*.js #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-20T23:56:52.557993Z\",\"lastUpdated\":\"2026-11-20T23:56:53.976905Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.js\"},\"owners\":[{\"type\":\"team\",\"identifier\":\"{{run}}\",\"id\":\"4512466791890944\"}]}]}}"
+      "response": "{\"raw\":\"path:*.js #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-27T20:46:11.471883Z\",\"lastUpdated\":\"2026-11-27T20:46:12.686006Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.js\"},\"owners\":[{\"type\":\"team\",\"identifier\":\"{{run}}\",\"id\":\"4512505678004224\"}]}]}}"
     },
     {
       "method": "GET",
       "path": "/projects/{{cred:org}}/{{run}}/ownership/",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"raw\":\"path:*.js #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-20T23:56:52.557993Z\",\"lastUpdated\":\"2026-11-20T23:56:53.976905Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.js\"},\"owners\":[{\"type\":\"team\",\"id\":\"4512466791890944\",\"name\":\"{{run}}\"}]}]}}"
+      "response": "{\"raw\":\"path:*.js #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-27T20:46:11.471883Z\",\"lastUpdated\":\"2026-11-27T20:46:12.686006Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.js\"},\"owners\":[{\"type\":\"team\",\"id\":\"4512505678004224\",\"name\":\"{{run}}\"}]}]}}"
     },
     {
       "method": "PUT",
@@ -78,14 +78,14 @@
       "body": "{\"raw\":\"path:*.go #{{run}}\"}",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"raw\":\"path:*.go #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-20T23:56:52.557993Z\",\"lastUpdated\":\"2026-11-20T23:56:54.445602Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.go\"},\"owners\":[{\"type\":\"team\",\"identifier\":\"{{run}}\",\"id\":\"4512466791890944\"}]}]}}"
+      "response": "{\"raw\":\"path:*.go #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-27T20:46:11.471883Z\",\"lastUpdated\":\"2026-11-27T20:46:13.223123Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.go\"},\"owners\":[{\"type\":\"team\",\"identifier\":\"{{run}}\",\"id\":\"4512505678004224\"}]}]}}"
     },
     {
       "method": "GET",
       "path": "/projects/{{cred:org}}/{{run}}/ownership/",
       "status": 200,
       "contentType": "application/json",
-      "response": "{\"raw\":\"path:*.go #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-20T23:56:52.557993Z\",\"lastUpdated\":\"2026-11-20T23:56:54.445602Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.go\"},\"owners\":[{\"type\":\"team\",\"id\":\"4512466791890944\",\"name\":\"{{run}}\"}]}]}}"
+      "response": "{\"raw\":\"path:*.go #{{run}}\",\"fallthrough\":true,\"dateCreated\":\"2026-11-27T20:46:11.471883Z\",\"lastUpdated\":\"2026-11-27T20:46:13.223123Z\",\"isActive\":true,\"autoAssignment\":\"Auto Assign to Issue Owner\",\"codeownersAutoSync\":true,\"schema\":{\"$version\":1,\"rules\":[{\"matcher\":{\"type\":\"path\",\"pattern\":\"*.go\"},\"owners\":[{\"type\":\"team\",\"id\":\"4512505678004224\",\"name\":\"{{run}}\"}]}]}}"
     },
     {
       "method": "PUT",
